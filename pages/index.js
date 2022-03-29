@@ -6,13 +6,13 @@ import { BASE_URL,fetchApi,PROPERTY_LIST_FOR_SALE,PROPERTY_LIST_FOR_RENT } from 
 import Property from "../components/Property"
 
 
-const Banner =({children,title1,title2,descr1,descr2,linkName,buttonText,imageUrl})=>(
+export const Banner =({purpose,title1,title2,descr1,descr2,linkName,buttonText,imageUrl})=>(
 
   <Flex flexWrap={'wrap'} justifyContent='center' alignItems={'center'} m={'10'}>
     <Image src={imageUrl} width={500} height={300} alt='banner'  />
     <Box p={5}>
       <Text color={'gray.500'} fontSize='sm' fontWeight={'medium'}>
-      {children}
+      {purpose}
       </Text>
       <Text  fontSize='3xl' fontWeight={'bold'} >
       {title1}<br/>{title2}
@@ -32,9 +32,9 @@ export default function Home({propertiesForSale,propertiesForRent}) {
   return (
     <Box>      
       <Banner
-       children={'Rent A Home'}
-       title1={'Rental Homes for'} 
-       title2={'Everyone'}
+       purpose={'Rent A Home'}
+        title1={'Rental Homes for'} 
+        title2={'Everyone'}
         descr1={'Exploer Apartments,Villas,Homes'}
         descr2={'and more'} 
         buttonText={'Exploer Renting'}
@@ -45,7 +45,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
          {propertiesForRent.map((item)=><Property item={item} key={item.id}/>)}
          </Flex>         
          <Banner
-       children={'BAY A  Home'}
+       purpose={'BAY A  Home'}
        title1={'Find,Buy&&Own Your'} 
        title2={'Dream Home'}
         descr1={'Exploer Apartments,Villas,Homes'}
